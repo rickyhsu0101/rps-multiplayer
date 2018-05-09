@@ -93,7 +93,7 @@ function updateScore(win, appendNum){
         }
         $("#wins").text(data.wins);
         $("#losses").text(data.losses);
-        setTimeout(resetMove(data), 3000);
+        setTimeout(function(){resetMove(data)}, 3000);
     });
 }
 function resetMove(data){
@@ -183,7 +183,7 @@ $("#rock, #paper, #scissor").on("click", function(event){
         $("#scissor").prop("disabled", true);
         $("#rock").addClass("disabled");
         $("#paper").addClass("disabled");
-        $("#scissor").addClass("disabled");
+        $("#scissor").addClass("disabled", true);
         database.ref("users/" + username).once("value", function(snapshot){
             var data = snapshot.val();
             data.move = $(_this).data("rps");
