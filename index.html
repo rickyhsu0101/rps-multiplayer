@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>RPS Game</title>
+   
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
+</head>
+<body>
+    <div class = "container">
+        <div class = "jumbotron">
+            <h1>RPS Game Multiplayer</h1>
+            <form id = "config">
+                <div class = "form-group">
+                    <label for ="inputUsername">Username</label>
+                    <input type = "text" class = "form-control" id = "inputUsername">
+                    <a class= "btn btn-primary" id = "sendConfig">Submit</a>
+                </div>
+            </form>
+            <div id = "loading" class = "d-none">
+                <h3>Waiting for opponent</h3>
+            </div>
+            <div class = "row d-none" id = "game">
+                <div class = "col-12">
+                    <h1><span id = "userName"></span> v <span id = "opponentName"></span></h1>
+                    <h1>Score: <span id = "wins">0</span> V <span id = "losses">0</span></h1>
+                    <h2>You chose: <span id = "userChoice"></span></h2>
+                    <h2>Opponent chose: <span id = "opponentChoice"></span></h2>
+                    <h1 id = "winMessage" class = "d-none"></h1>
+                </div>
+                <div class = "col-4">
+                    <a class = "btn btn-primary" id = "rock" data-rps = "rock">Rock</a>
+                    <a class = "btn btn-primary" id = "paper" data-rps = "paper">Paper</a>
+                    <a class = "btn btn-primary" id = "scissor" data-rps = "scissor">Scissor</a>
+                </div>
+                <div class = "col-8">
+                    <form>
+                        <div class = "form-group">
+                            <label for = "chat"><h3>Chat</h3></label>
+                            <textarea class = "form-control" id = "chat" rows="8" readonly ></textarea>
+                        </div>
+                        <div class = "form-group">
+                            <input type = "text" class = "form-control" id = "message">
+                            <a class = "btn btn-primary" id = "sendMessage">Send</a>
+                        </div>
+                    </form>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
+    <script src = "./logic.js"></script>
+</body>
+</html>
